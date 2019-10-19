@@ -9,6 +9,9 @@ const Router = EmberRouter.extend({
 Router.map(function() {
   this.route('home');
   this.route('CV');
+  this.route('posts', function() {
+    this.route('show');
+  });
 });
 
 export default Router;

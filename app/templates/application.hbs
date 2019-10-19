@@ -1,4 +1,4 @@
-<div class="container-fluid col-md-8">
+<div class="container-fluid col-md-9">
     <header class="blog-header py-3 top-buffer-large">
         <div class="row flex-nowrap justify-content-between align-items-center">
           <div class="col-4">
@@ -19,15 +19,38 @@
           <LinkTo @route="home" class="nav-item p-2 text-muted">
               Home
           </LinkTo>
+          <LinkTo class="nav-item p-2 text-muted" @route="posts">
+                Blog
+          </LinkTo>
           <LinkTo @route="CV" class="nav-item p-2 text-muted">
               Resume
           </LinkTo>
-          <a class="nav-item p-2 text-muted" href="#">Blog</a>
           <a class="nav-item p-2 text-muted" href="#">Contributors</a>
     
         </nav>
       </div>
-
 </div>
 
-{{outlet}}
+
+<main role="main" class="container-fluid col-md-9">
+  {{outlet}}
+</main>
+
+
+
+<div class="container-fluid col-md-9 top-buffer-small">
+
+  <hr>
+  <footer class="container max-w-xl px-4 md:px-8 mx-auto border-t border-grey py-6 mt-6 text-center text-sm sm:text-base">
+      <p>
+        &copy; 2019 Nathanael Boketey-Kwaku &nbsp;&bull;&nbsp;
+        <a href="http://twitter.com/natborks">@natborks</a> &nbsp;&bull;&nbsp; 
+        <a href="/blog/feed.atom">RSS</a> &nbsp;&bull;&nbsp; Like what I write? Send me an email 
+        &amp; we can work together
+      </p>
+  </footer>
+  <br>
+  <br>
+</div>
+
+
