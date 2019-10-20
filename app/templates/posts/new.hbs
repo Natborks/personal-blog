@@ -1,0 +1,24 @@
+<div class="row">
+    <div class="col-md-10">
+        <form>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Title</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add Awesome post title here...">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Slug</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Add post slug here (small description of post or tagline).">
+            </div>
+            <div>
+                {{pell-editor value=value onChange=(action (mut value)) pellOptions=options}}
+            </div>
+            <button type="submit" {{action  'savePost'}}class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-10">
+        {{parse-html this.value}}
+    </div>
+</div>

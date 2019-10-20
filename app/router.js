@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('CV');
   this.route('posts', function() {
     this.route('show');
+    this.route('new');
   });
 });
 

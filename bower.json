@@ -1,0 +1,6 @@
+{
+  "name": "blog",
+  "dependencies": {
+    "emojify": "~1.1.0"
+  }
+}
