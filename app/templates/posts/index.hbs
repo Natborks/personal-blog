@@ -9,9 +9,13 @@
             <h2>Articles</h2>
 
             <div>
-                <h6 class="text-primary display-md"><LinkTo @route="posts.show">&#8212;"Something must kill a man", and this project came close to killing me</LinkTo></h6>
-                <p class="blog-post-meta display-sm mb-1 ">December 23, 2013 by <a href="#">Nathanael</a></p>
-                <p class="">Everything about coding and technology. This is not a news site though</p>
+                {{#each model as |post|}}
+                    <h6 class="text-primary display-md">{{post.title}}</h6>
+                    <p class="blog-post-meta display-sm mb-1 ">{{format-date from_now post.created_at}} <span> by Nathanel</span></p> 
+                    <p class="">{{post.slug}}</p>
+                {{else}}
+                    <p>nothing here</p>
+                {{/each}}
 
             </div>
 

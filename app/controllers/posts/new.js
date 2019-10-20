@@ -4,6 +4,7 @@ import { htmlSafe } from '@ember/template';
 export default Controller.extend({
     value : "<h1></h1>",
 
+    post : Ember.A(),
     actions : {
         myOnChangedAction : function(value) {
             // Do something with the value.
@@ -12,7 +13,27 @@ export default Controller.extend({
           },
 
           savePost : function () {
-            console.log(this.get('pasred'))
+            let self = this;
+
+                let post = this.store.createRecord('post', {
+                    title: 'sdfsdf',//this.get('title'),
+                    slug: this.get('slug'),
+                    body: this.get('value'),
+                    created_at: new Date()
+                })
+
+                console.log(this.get('slug'))
+                post.save();
+
+                this.setProperties({
+                    title: '',
+                    slug: ''
+                })
+                
+                alert('post created');
+
+               // self.transitionToRoute('posts')
+
           }
     }
 });

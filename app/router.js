@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('home');
   this.route('CV');
   this.route('posts', function() {
-    this.route('show');
+    this.route('show', {path: '/post/:id'});
     this.route('new');
   });
 });
